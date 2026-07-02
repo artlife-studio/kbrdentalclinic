@@ -13,6 +13,8 @@
 
 <!-- Professional icons: Font Awesome 6 Free -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+<!-- Phosphor Icons (duotone) — MIT licensed, for premium dental iconography -->
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css" />
 
 <link rel="stylesheet" href="style.css" />
 </head>
@@ -52,28 +54,74 @@
 <!-- ============================================================
      HERO
      ============================================================ -->
-<section class="hero">
-  <div class="wrap hero-inner reveal">
-    <span class="hero-badge"><span class="dot" aria-hidden="true"></span> 24/7 ochiq · Yunusobod, Toshkent</span>
+<section class="hero" id="hero">
+  <div class="wrap hero-inner">
+    <!-- Left: content -->
+    <div class="hero-copy reveal">
+      <span class="hero-badge"><span class="dot" aria-hidden="true"></span> 24/7 ochiq · Yunusobod, Toshkent</span>
 
-    <h1>Sog'lom tabassum — <span class="accent">ishonchli qo'llarda</span></h1>
+      <h1>Sog'lom tabassum — <span class="accent">ishonchli qo'llarda</span></h1>
 
-    <p class="hero-sub">Zamonaviy uskunalar va tajribali shifokorlar. Tishlaringizni og'riqsiz davolab, chiroyli tabassumni qaytaramiz.</p>
+      <p class="hero-sub">Zamonaviy uskunalar va tajribali shifokorlar bilan og'riqsiz davolash — chiroyli tabassumni qaytaramiz.</p>
 
-    <div class="hero-actions">
-      <a href="tel:+998944846063" class="btn btn-primary btn-lg">
-        <i class="fa-solid fa-phone" aria-hidden="true"></i> Qo'ng'iroq qilish
-      </a>
-      <a href="https://t.me/bobur_kuvondikov" target="_blank" rel="noopener" class="btn btn-white btn-lg">
-        <i class="fa-brands fa-telegram" aria-hidden="true"></i> Bog'lanish
-      </a>
+      <div class="hero-actions">
+        <a href="tel:+998944846063" class="btn btn-primary btn-lg">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i> Qo'ng'iroq qilish
+        </a>
+        <a href="https://t.me/bobur_kuvondikov" target="_blank" rel="noopener" class="btn btn-white btn-lg">
+          <i class="fa-brands fa-telegram" aria-hidden="true"></i> Bog'lanish
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hstat"><b>24/7</b><span>Ochiq</span></div>
+        <span class="hstat-div" aria-hidden="true"></span>
+        <div class="hstat"><b>10+</b><span>Yil tajriba</span></div>
+        <span class="hstat-div" aria-hidden="true"></span>
+        <!-- PLACEHOLDER: haqiqiy bemorlar soni -->
+        <div class="hstat"><b>5000+</b><span>Mamnun bemor</span></div>
+      </div>
     </div>
 
-    <div class="hero-trust">
-      <span class="item"><i class="fa-solid fa-clock"></i> 24/7 ochiq</span>
-      <span class="item"><i class="fa-solid fa-user-doctor"></i> Tajribali shifokorlar</span>
-      <span class="item"><i class="fa-solid fa-shield-halved"></i> Ishga kafolat</span>
-      <span class="item"><i class="fa-regular fa-face-smile"></i> Og'riqsiz davolash</span>
+    <!-- Right: animated CSS 3D scene (no images, no libraries) -->
+    <div class="hero-scene reveal" id="heroScene" aria-hidden="true">
+      <div class="scene-stage">
+        <span class="scene-blob blob-a"></span>
+        <span class="scene-blob blob-b"></span>
+        <span class="scene-orbit"></span>
+
+        <!-- Central glass panel with tooth -->
+        <div class="scene-core" data-depth="1">
+          <span class="core-glow"></span>
+          <svg class="tooth-svg" viewBox="0 0 64 64" role="img" aria-label="Tish">
+            <defs>
+              <linearGradient id="toothGrad" x1="0" y1="0" x2="0.35" y2="1">
+                <stop offset="0" stop-color="#5B9BFF" />
+                <stop offset=".55" stop-color="#2563EB" />
+                <stop offset="1" stop-color="#1B4FD6" />
+              </linearGradient>
+            </defs>
+            <path fill="url(#toothGrad)" d="M32 6c-6.7 0-11.3 1.6-15.2 4.9C13.2 13.9 11.5 18 11.5 23c0 3.4.7 6.2 1.6 9.4.6 2.2.9 3.9 1.2 6.6.5 4.6 1 8.8 2.3 12.6 1 2.9 2.4 5.6 4.6 6.6 1.4.6 2.8.3 3.8-.8 1-1.1 1.6-2.8 2.1-4.9.7-3 1.2-6.4 1.7-9.1.4-2.3 1.2-3.9 3.2-3.9s2.8 1.6 3.2 3.9c.5 2.7 1 6.1 1.7 9.1.5 2.1 1.1 3.8 2.1 4.9 1 1.1 2.4 1.4 3.8.8 2.2-1 3.6-3.7 4.6-6.6 1.3-3.8 1.8-8 2.3-12.6.3-2.7.6-4.4 1.2-6.6.9-3.2 1.6-6 1.6-9.4 0-5-1.7-9.1-5.3-12.1C43.3 7.6 38.7 6 32 6z" />
+            <path fill="#fff" opacity=".22" d="M22.5 13.5c-2.6 1.4-4.4 3.6-5.1 6.6-.3 1.3.6 2.4 1.7 2.1 1-.3 1.3-1.3 1.6-2.4.5-1.8 1.6-3.2 3.3-4.2 1-.6 1.3-1.6.8-2.4-.5-.7-1.4-.8-2.3-.3z" />
+          </svg>
+        </div>
+
+        <!-- Floating glass cards -->
+        <div class="scene-card card-rating" data-depth="2.4">
+          <span class="sc-ic sc-star"><i class="ph-duotone ph-star"></i></span>
+          <div class="sc-body"><b>4.9</b><small>Reyting</small></div>
+        </div>
+
+        <div class="scene-card card-time" data-depth="1.8">
+          <span class="sc-ic sc-time"><i class="ph-duotone ph-clock"></i></span>
+          <div class="sc-body"><b>24/7</b><small>Ochiq</small></div>
+        </div>
+
+        <div class="scene-card card-pain" data-depth="3">
+          <span class="sc-ic sc-pain"><i class="ph-duotone ph-hand-heart"></i></span>
+          <div class="sc-body"><b>Og'riqsiz</b><small>Davolash</small></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -147,9 +195,8 @@
 <section class="section about" id="about">
   <div class="wrap about-grid">
     <div class="about-photo reveal">
-      <span class="ph-mark" aria-hidden="true"><i class="fa-solid fa-hospital"></i></span>
+      <img src="img/p1.webp" alt="KBR Dental klinikasi" loading="lazy" />
       <div class="exp-chip"><b>10+</b><span>YIL TAJRIBA</span></div>
-      <!-- PLACEHOLDER: klinika interyeri rasmi -->
     </div>
 
     <div class="about-copy reveal">
@@ -179,34 +226,25 @@
     </div>
 
     <div class="sol-grid">
+      <!-- PLACEHOLDER rasmlar: img/solution-*.svg ni o'z rasmlaringiz bilan almashtiring (oq fon) -->
       <article class="sol reveal">
-        <div class="sol-ic"><i class="fa-solid fa-x-ray"></i></div>
-        <div><h3>Raqamli tashxis</h3><p>3D tomografiya bilan aniq ko'rib, to'g'ri davolash rejasini tuzamiz.</p></div>
+        <div class="sol-img"><img src="img/tooth-1.png" alt="Raqamli tashxis" loading="lazy" /></div>
+        <div class="sol-body"><h3>Raqamli tashxis</h3><p>3D tomografiya bilan aniq ko'rib, to'g'ri davolash rejasini tuzamiz.</p></div>
       </article>
 
       <article class="sol reveal">
-        <div class="sol-ic"><i class="fa-regular fa-face-smile"></i></div>
-        <div><h3>Og'riqsiz davolash</h3><p>Zamonaviy anesteziya — muolaja qulay va stresssiz o'tadi.</p></div>
+        <div class="sol-img"><img src="img/tooth-2.png" alt="Og'riqsiz davolash" loading="lazy" /></div>
+        <div class="sol-body"><h3>Og'riqsiz davolash</h3><p>Zamonaviy anesteziya — muolaja qulay va stresssiz o'tadi.</p></div>
       </article>
 
       <article class="sol reveal">
-        <div class="sol-ic"><i class="fa-solid fa-tooth"></i></div>
-        <div><h3>Tishlarni tiklash</h3><p>Implant, protez va koronkalar bilan yo'qolgan tishni qaytaramiz.</p></div>
+        <div class="sol-img"><img src="img/tooth-3.png" alt="Tishlarni tiklash" loading="lazy" /></div>
+        <div class="sol-body"><h3>Tishlarni tiklash</h3><p>Implant, protez va koronkalar bilan yo'qolgan tishni qaytaramiz.</p></div>
       </article>
 
       <article class="sol reveal">
-        <div class="sol-ic"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-        <div><h3>Estetika</h3><p>Oqartirish va vinirlar bilan tabiiy, chiroyli tabassum.</p></div>
-      </article>
-
-      <article class="sol reveal">
-        <div class="sol-ic"><i class="fa-solid fa-people-roof"></i></div>
-        <div><h3>Butun oila uchun</h3><p>Bolalardan kattalargacha — har bir yosh uchun alohida g'amxo'rlik.</p></div>
-      </article>
-
-      <article class="sol reveal">
-        <div class="sol-ic"><i class="fa-solid fa-shield-halved"></i></div>
-        <div><h3>Ishga kafolat</h3><p>Bajarilgan davolash va protezlarga rasmiy kafolat beramiz.</p></div>
+        <div class="sol-img"><img src="img/tooth-4.png" alt="Estetika" loading="lazy" /></div>
+        <div class="sol-body"><h3>Estetika</h3><p>Oqartirish va vinirlar bilan tabiiy, chiroyli tabassum.</p></div>
       </article>
     </div>
   </div>
@@ -411,6 +449,28 @@
       burger.setAttribute('aria-expanded', 'false');
     })
   );
+
+  // Hero scene: gentle 3D tilt + per-card parallax following the cursor
+  const scene = document.getElementById('heroScene');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (scene && !reduceMotion && window.matchMedia('(min-width: 981px)').matches) {
+    const stage = scene.querySelector('.scene-stage');
+    const layers = scene.querySelectorAll('[data-depth]');
+    scene.addEventListener('pointermove', (e) => {
+      const r = scene.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - 0.5;   // -0.5 .. 0.5
+      const py = (e.clientY - r.top) / r.height - 0.5;
+      stage.style.transform = `rotateY(${px * 10}deg) rotateX(${-py * 10}deg)`;
+      layers.forEach(l => {
+        const d = parseFloat(l.dataset.depth);
+        l.style.translate = `${px * d * 14}px ${py * d * 14}px`;
+      });
+    });
+    scene.addEventListener('pointerleave', () => {
+      stage.style.transform = '';
+      layers.forEach(l => { l.style.translate = ''; });
+    });
+  }
 
   // Scroll reveal
   const io = new IntersectionObserver((entries) => {
